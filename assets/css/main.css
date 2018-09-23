@@ -1558,7 +1558,7 @@
 		font-size: 19pt;
 		font-weight: 300;
 		line-height: 1.75em;
-		color: #888;
+		color: #fff;
 	}
 
 		body.is-loading * {
@@ -1634,7 +1634,7 @@
 
 	strong, b {
 		font-weight: 300;
-		color: #666;
+		color: #333333;
 	}
 
 	em, i {
@@ -1913,7 +1913,7 @@
 		color: #262626 !important;
 		text-decoration: none;
 		padding: 0.75em 2.5em 0.75em 2.5em;
-		background-color: #66cc99;
+		background-color: #42b970;
 		border: 0;
 		cursor: pointer;
 		background-image: -moz-linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.15)), url("images/overlay.png");
@@ -1931,7 +1931,7 @@
 		input[type="reset"]:hover,
 		button:hover,
 		.button:hover {
-			background-color: #9ececc;
+			background-color: #66cc99;
 		}
 
 		input[type="button"]:active,
@@ -1939,14 +1939,33 @@
 		input[type="reset"]:active,
 		button:active,
 		.button:active {
-			background-color: #7eaeac;
+			background-color: #66cc99;
 		}
 
 /* Item */
 
 	.item {
-		box-shadow: 0 0.05em 0.15em 0 rgba(0, 0, 0, 0.05);
+		box-shadow: 0 0.05em 0.15em 0em rgba(0, 0, 0, 0.49);
 		margin-bottom: 40px;
+		transition: all ease 1s;
+		overflow: hidden;
+	}
+
+	.item:hover {
+		box-shadow: 0 0.15em 0.2em 0em rgba(0, 0, 0, 0.49);
+	}
+
+	.item .image {
+		overflow: hidden;
+	}
+
+	.item .image img {
+		transition: transform .5s; 
+	}
+
+
+	.item:hover img {
+		transform: scale(1.5);
 	}
 
 		.item header {
@@ -2145,6 +2164,7 @@
 					border-left: 0;
 					padding-left: 0;
 					margin-left: 0;
+					color: #333333;
 				}
 
 /* Main */
@@ -2176,6 +2196,11 @@
 					border-color: inherit;
 				}
 
+				#main a[href='#portfolio'], footer a.button.scrolly, input[type='submit'] {
+					color: #fff !important;
+					box-shadow: 0 0.1em 0.15em 0em rgba(0, 0, 0, 0.05);
+				}
+
 				#main > section.dark a {
 					color: #1a1a1a;
 					border-color: inherit;
@@ -2192,12 +2217,18 @@
 			}
 
 			#main > section.one {
-				background-color: #1a1a1a;
-				background-image: url("../../images/banner.JPG");
+				background-color: #fff;
+				/* background-image: url("../../images/banner.JPG"); */
+				height: 100vh;
 			}
 
 			#main > section.two {
-				background-color: #1a1a1a;
+				background-color: #fff;
+				color: #333333;
+			}
+
+			#portfolio h2 {
+				color: #333333;
 			}
 
 			#main > section.three {
@@ -2591,4 +2622,9 @@
 
 			.subpage .main > .content.style2 {
 				background: url("images/bgtr.svg") top right no-repeat, url("images/bgbl.svg") bottom left no-repeat, url("images/overlay.png"), linear-gradient(45deg, #384955, #655361, #85505f);
+			}
+
+
+			.typed-cursor--blink, .typed-cursor {
+				display: none !important;
 			}

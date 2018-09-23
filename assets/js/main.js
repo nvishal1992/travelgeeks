@@ -110,10 +110,38 @@
 					});
 
 			// Fix: Remove transitions on WP<10 (poor/buggy performance).
-				if (skel.vars.os == 'wp' && skel.vars.osVersion < 10)
+				if (skel.vars.os == 'wp' && skel.vars.osVersion < 10) {
 					$('#headerToggle, #header, #main')
 						.css('transition', 'none');
+				}
 
+				var typed6 = new Typed('#banner-text', {
+					strings: ["Hey there, we are TravelGeeks <br/> This site is to show the pics we have travelled so far"],
+					typeSpeed: 40,
+					backSpeed: 0,
+					loop: false,
+					onComplete: () => {
+						new Typed("#caption-text", {
+							strings: ["we will be travelling around to explore the new unexplored places.<br /> we created this page to give the details like where we travelled and some info about respective places and our experience too"],
+							typeSpeed: 40,
+							backSpeed: 0,
+							loop: false,
+							onComplete:  () => {
+								$("#portfolio-btn").fadeIn();
+							}
+						})
+					}
+				  });
+
+				 let img = new Image();      
+				img.src = location.href + "images/banner.JPG";
+				$("#main > section.one").hide();
+				$(img).load(function(){
+					$("#main > section.one").css("background-image","url("+$(this).attr("src")+")").fadeIn(2000);
+					$("#portfolio").css({'margin-top': '0px'});                  
+					
+				});
+		
 	});
 
 })(jQuery);
