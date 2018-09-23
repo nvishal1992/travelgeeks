@@ -2164,7 +2164,7 @@
 					border-left: 0;
 					padding-left: 0;
 					margin-left: 0;
-					color: #333333;
+					color: #fff;
 				}
 
 /* Main */
@@ -2236,7 +2236,17 @@
 			}
 
 			#main > section.four {
-				background-color: #1a1a1a;
+				background-color: #fff;
+				color: #333333;
+			}
+
+			#main > section.four h2 {
+				color: #333333;
+			}
+
+			#footer {
+				background: #1a1a1a;
+				color: #fff;
 			}
 
 /* Wide */
