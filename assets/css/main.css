@@ -1964,7 +1964,7 @@
 	}
 
 
-	.item:hover img, .image:hover img {
+	.item:hover img {
 		transform: scale(1.5);
 	}
 
@@ -2628,3 +2628,8 @@
 			.typed-cursor--blink, .typed-cursor {
 				display: none !important;
 			}
+
+
+.pace .pace-progress {
+	background: #66cc99 !important;
+}
