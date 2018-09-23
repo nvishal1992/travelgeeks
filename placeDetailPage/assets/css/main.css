@@ -1531,9 +1531,9 @@
 		}
 	
 	
-		.image:hover img {
+		/*.image:hover img {
 			transform: scale(1.5);
-		}
+		}*/
 
 		.image.left {
 			float: left;
