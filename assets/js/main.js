@@ -139,8 +139,8 @@
 				$(img).load(function(){
 					$("#main > section.one").css("background-image","url("+$(this).attr("src")+")").fadeIn(2000);
 					$("#portfolio").css({'margin-top': '0px'});                  
-					
 				});
+				AOS.init();
 		
 	});
 
