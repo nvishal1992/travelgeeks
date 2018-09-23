@@ -2643,3 +2643,13 @@
 .pace .pace-progress {
 	background: #66cc99 !important;
 }
+
+#banner-text, #caption-text {
+	color: #fff !important;
+}
+
+.kathe {
+	font-size: 18px;
+    font-weight: 100;
+    line-height: 35px;
+}

@@ -134,7 +134,7 @@
 				  });
 
 				 let img = new Image();      
-				img.src = location.href + "images/banner.JPG";
+				img.src = location.href + "images/bikebg.jpeg";
 				$("#main > section.one").hide();
 				$(img).load(function(){
 					$("#main > section.one").css("background-image","url("+$(this).attr("src")+")").fadeIn(2000);
