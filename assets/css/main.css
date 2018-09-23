@@ -1959,12 +1959,12 @@
 		overflow: hidden;
 	}
 
-	.item .image img {
+	.image img {
 		transition: transform .5s; 
 	}
 
 
-	.item:hover img {
+	.item:hover img, .image:hover img {
 		transform: scale(1.5);
 	}
 
