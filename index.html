@@ -4,6 +4,9 @@
 		<title>TravelGeeks.in</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/themes/black/pace-theme-minimal.min.css">
+		<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 		<link rel="stylesheet" href="assets/css/main.css" />
 
 	</head>
@@ -69,21 +72,19 @@
 						<div class="container">
 
 							<header>
-								<h2 class="alt">Hey there, we are<strong>TravelGeeks</strong>,<br />
-								This site is to show the pics we  <a href="#">Travelled</a> so far</h2>
-								<p>we will be travelling around to explore the new unexplored places.<br />
-								we created this page to give the details like where we travelled and some info about respective places and our experience too.</p>
+								<h2 class="alt" id="banner-text"></h2>
+								<p id="caption-text"></p>
 							</header>
 
 							<footer>
-								<a href="#portfolio" class="button scrolly">Places we visted</a>
+								<a href="#portfolio" id="portfolio-btn" style="display:none;" class="button scrolly">Places we visted</a>
 							</footer>
 
 						</div>
 					</section>
 
 				<!-- Portfolio -->
-					<section id="portfolio" class="two">
+					<section id="portfolio" class="two" style="margin-top: 100vh;">
 						<div class="container">
 
 							<header>
@@ -95,13 +96,13 @@
 
 							<div class="row">
 								<div class="4u 12u$(mobile)">
-									<article class="item">
+									<article class="item" data-aos="zoom-in">
 										<a href="placeDetailPage/Kodachadri.html" class="image fit"><img src="images/koda.jpg" alt="" /></a>
 										<header>
 											<h3>Kodachadri</h3>
 										</header>
 									</article>
-									<article class="item">
+									<article class="item" data-aos="zoom-in">
 										<a href="placeDetailPage/mandaragiri.html" class="image fit"><img src="images/mand.jpg" alt="" /></a>
 										<header>
 											<h3>Mandaragiri</h3>
@@ -109,13 +110,13 @@
 									</article>
 								</div>
 								<div class="4u 12u$(mobile)">
-									<article class="item">
+									<article class="item" data-aos="zoom-in">
 										<a href="placeDetailPage/bilikalrangaswamybetta.html" class="image fit"><img src="images/bili.jpg" alt="" /></a>
 										<header>
 											<h3>Bilikal Ranganathaswamy betta</h3>
 										</header>
 									</article>
-									<article class="item">
+									<article class="item" data-aos="zoom-in">
 										<a href="placeDetailPage/sakleshpura.html" class="image fit"><img src="images/saka.jpg" alt="" /></a>
 										<header>
 											<h3>Sakleshpura</h3>
@@ -123,13 +124,13 @@
 									</article>
 								</div>
 								<div class="4u$ 12u$(mobile)">
-									<article class="item">
+									<article class="item" data-aos="zoom-in">
 										<a href="placeDetailPage/marvanthe.html" class="image fit"><img src="images/marv.jpg" alt="" /></a>
 										<header>
 											<h3>Marvanthe</h3>
 										</header>
 									</article>
-									<article class="item">
+									<article class="item" data-aos="zoom-in">
 										<a href="placeDetailPage/murudeshwara.html" class="image fit"><img src="images/murd.jpg" alt="" /></a>
 										<header>
 											<h3>Muradeshwara</h3>
@@ -144,7 +145,7 @@
 					</section>
 
 				<!-- About Me -->
-					<section id="about" class="three">
+					<section id="about" class="three" data-aos="zoom-in">
 						<div class="container">
 
 							<header>
@@ -153,7 +154,7 @@
 
 							<a href="#" class="image featured"><img src="images/abou.jpg" alt="" /></a>
 
-							<p>This TravelGeeks site is owned by Vishal Setty and Tribhuvan Shetty. We both are passionate about travelling to new places. Yes, many times we take our bikes with us too. We visited some places which name was not there on Google maps and thus helped Google to improve. </br>
+							<p class="kathe">This TravelGeeks site is owned by Vishal Setty and Tribhuvan Shetty. We both are passionate about travelling to new places. Yes, many times we take our bikes with us too. We visited some places which name was not there on Google maps and thus helped Google to improve. </br>
 I (Vishal) have a hobby of photography and Tribhuvan is the one who plans out for all travelling stuff (very good at that). We came up with a plan to create some platform to share our travelling experience, so that it might help the people who are planning to visit those places. </br>
 There are many websites where we can get the information about places, but how we stand different is we share the experience of our visit to many destinations which are near to Bengaluru which will be the perfect weekend gateways.  
 </p>
@@ -162,7 +163,7 @@ There are many websites where we can get the information about places, but how w
 					</section>
 
 				<!-- Contact -->
-					<section id="contact" class="four">
+					<section id="contact" class="four" data-aos="zoom-in">
 						<div class="container">
 
 							<header>
@@ -206,7 +207,9 @@ There are many websites where we can get the information about places, but how w
 			<script src="assets/js/skel.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.9/typed.min.js"></script>
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/pace.min.js"></script>
+			<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 			<script src="assets/js/main.js"></script>
-
 	</body>
 </html>

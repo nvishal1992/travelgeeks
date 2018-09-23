@@ -1496,6 +1496,7 @@
 		position: relative;
 		display: inline-block;
 		border: 0;
+		overflow: hidden;
 	}
 
 		.image:after {
@@ -1523,6 +1524,15 @@
 		.image.fit {
 			display: block;
 			width: 100%;
+		}
+
+		.image img {
+			transition: transform .5s; 
+		}
+	
+	
+		.image:hover img {
+			transform: scale(1.5);
 		}
 
 		.image.left {
