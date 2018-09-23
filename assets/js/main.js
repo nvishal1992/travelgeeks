@@ -116,7 +116,7 @@
 				}
 
 				var typed6 = new Typed('#banner-text', {
-					strings: ["Hey there, we are TravelGeeks <br/> This site is to show the pics we have travelled so far"],
+					strings: ["Hey there!!!<br/> we are TravelGeeks <br/> This site is to show the pics we have travelled so far"],
 					typeSpeed: 40,
 					backSpeed: 0,
 					loop: false,
