@@ -116,13 +116,13 @@
 				}
 
 				var typed6 = new Typed('#banner-text', {
-					strings: ["Hey there!!! we are TravelGeeks <br/> This site is to show the pics we have travelled so far"],
+					strings: ["Hey there!!! <br/> We are TravelGeeks <br/> This website is to show the pics we have travelled so far"],
 					typeSpeed: 40,
 					backSpeed: 0,
 					loop: false,
 					onComplete: () => {
 						new Typed("#caption-text", {
-							strings: ["we will be travelling around to explore the new unexplored places.<br /> we created this page to give the details like where we travelled and some info about respective places and our experience too"],
+							strings: ["we will be travelling around to explore the new unexplored places.<br /> This website is one place of access to for place we travelled and short info about the same!"],
 							typeSpeed: 40,
 							backSpeed: 0,
 							loop: false,
