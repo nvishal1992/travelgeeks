@@ -1,4 +1,19 @@
+function tryOpening() {
+	var answer = prompt("Enter the password! Clue: fossil watch");
+	if (answer && answer.toLowerCase() == "StayWildGirl".toLowerCase()) {
+		$('#main').css({ display: 'block' });
+	} else {
+		$('#lol').css({ display: 'block' });
+	}
+}
+
+
 $(document).ready(function() {
+	tryOpening();
+	$("#retry").on('click', function() {
+		$('#lol').css({ display: 'none' });
+		tryOpening()
+	});
 	$(window).on("load", function () {
 		$("#nav-sticky-wrapper").sticky({ topSpacing: 0 });
 	});
