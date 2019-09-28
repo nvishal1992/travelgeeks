@@ -124,9 +124,10 @@ section.img-bg-2{
 	color:#FFF;
 }
 section.img-bg-3{
-	background:url(../img/bg-3.jpg) no-repeat;
+	background:url(../img/pw/PSX_20190927_223806.jpg) no-repeat;
 	background-attachment:fixed;
 	background-size:cover;
+	color: white;
 }
 section.img-bg-4{
 	background:url(../img/bg-4.jpg) no-repeat;
@@ -134,7 +135,7 @@ section.img-bg-4{
 	background-size:cover;
 }
 section.img-bg-5{
-	background:url(../img/bg-5.png) no-repeat;
+	background:url(../img/pw/PSX_20190927_225437.jpg) no-repeat;
 	background-attachment:fixed;
 	background-size:cover;
 }
@@ -184,7 +185,7 @@ section.img-bg-5{
 }
 
 section#home{
-	background:url(../img/bg-1.jpg) no-repeat;
+	background:url(../img/pw/PSX_20190927_214632.jpg) no-repeat;
 	background-attachment:fixed;
 	background-size:cover;
 	text-align:center;
@@ -192,6 +193,7 @@ section#home{
 	padding:50px 0px;
 	position:relative;
 	padding-top:6%;
+	color: white;
 }
 ul.names{
 	list-style:none;
@@ -294,6 +296,7 @@ ul.names li{
 }
 .profile img{
 	margin:40px auto;
+	max-height: 400px;
 }
 .social-icons{
 	margin: 27px auto;
