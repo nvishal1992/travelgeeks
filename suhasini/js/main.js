@@ -1,6 +1,6 @@
 function tryOpening() {
 	var answer = prompt("Enter the password! Clue: A riddle on the fossil watch box! 😉 ");
-	if (answer && answer.toLowerCase() == "StayWildGirl".toLowerCase()) {
+	if (answer && answer.toLowerCase() == "vish".toLowerCase()) {
 		$('#main').css({ display: 'block' });
 	} else {
 		$('#lol').css({ display: 'block' });
