@@ -9,7 +9,7 @@ function tryOpening() {
 
 
 $(document).ready(function() {
-	tryOpening();
+	// tryOpening();
 	$("#retry").on('click', function() {
 		$('#lol').css({ display: 'none' });
 		tryOpening()
