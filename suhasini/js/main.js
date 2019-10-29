@@ -72,4 +72,18 @@ $(document).ready(function() {
 	$(window).on("resize", function(){
 	    $(".countdown").TimeCircles().rebuild();
 	});
+
+	function testAnim(x) {
+		$('.modal .modal-dialog').attr('class', 'modal-dialog  ' + x + '  animated');
+	};
+	$('#myModal').on('show.bs.modal', function (e) {
+		var anim = "bounceIn";
+		testAnim(anim);
+	})
+	$('#myModal').on('hide.bs.modal', function (e) {
+		var anim = "flipOutX";
+		testAnim(anim);
+	})
+	$('#myModal').modal('show');
+
 });
