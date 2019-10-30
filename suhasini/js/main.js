@@ -83,7 +83,10 @@ $(document).ready(function() {
 	$('#myModal').on('hide.bs.modal', function (e) {
 		var anim = "flipOutX";
 		testAnim(anim);
-	})
-	$('#myModal').modal('show');
+	});
+
+	setTimeout(function() {
+		$('#myModal').modal('show');
+	}, 1000 * 15); // 15secs
 
 });
