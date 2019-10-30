@@ -12,7 +12,7 @@ h1,h2,h3,h4,h5,h6,section#home{
 h1 span, h2 span, h3 span, h4 span, h5 span, h6 span{
 	color:#f9667e;
 }
-h2.vishal p{
+.vishal p{
   background: rgba(0, 0, 0, 0.6);
   color: #fff;
 }
@@ -142,7 +142,6 @@ section.img-bg-5{
 	background:url(../img/pw/PSX_20190927_225437.jpg) no-repeat;
 	background-attachment:fixed;
 	background-size:cover;
-	opacity:0.5;
 }
 #nav-sticky-wrapper{
 	height: 50px;
