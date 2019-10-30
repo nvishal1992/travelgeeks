@@ -142,6 +142,7 @@ section.img-bg-5{
 	background:url(../img/pw/PSX_20190927_225437.jpg) no-repeat;
 	background-attachment:fixed;
 	background-size:cover;
+	opacity:1;
 }
 #nav-sticky-wrapper{
 	height: 50px;
