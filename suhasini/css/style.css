@@ -17,6 +17,10 @@ h2.vishal{
   opacity: 0.6;
   background-color: #80ced6;
 }
+h2.vishal p{
+  opacity: 0.6;
+  background-color: #80ced6;
+}
 
 .title-block{
 	margin:0px auto 70px auto;
