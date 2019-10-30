@@ -12,14 +12,9 @@ h1,h2,h3,h4,h5,h6,section#home{
 h1 span, h2 span, h3 span, h4 span, h5 span, h6 span{
 	color:#f9667e;
 }
-
-h2.vishal{
-  opacity: 0.6;
-  background-color: #80ced6;
-}
 h2.vishal p{
-  opacity: 0.6;
-  background-color: #80ced6;
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
 }
 
 .title-block{
