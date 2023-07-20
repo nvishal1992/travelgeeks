@@ -3,21 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Event Photos</title>
+    <title>Event Photo Gallery</title>
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
     <header>
-        <h1>Event Photos</h1>
+        <h1>Your Event Photo Gallery</h1>
     </header>
     <main>
-        <section class="photo-gallery">
-            <h2>Event Gallery trail</h2>
-            <div class="photo-list">
-                <!-- Photos will be added dynamically using JavaScript -->
+        <div id="eventList">
+            <!-- Event 1 -->
+            <div class="event-item event1">
+                <img src="img/event1.jpg" alt="Event 1" onclick="showImage('img/event1.jpg')">
+                <div class="event-details">
+                    <h2>Event 1</h2>
+                    <p>Event 1 details here...</p>
+                </div>
             </div>
-        </section>
+
+            <!-- Event 2 -->
+            <div class="event-item event2">
+                <img src="img/event2.jpg" alt="Event 2" onclick="showImage('img/event2.jpg')">
+                <div class="event-details">
+                    <h2>Event 2</h2>
+                    <p>Event 2 details here...</p>
+                </div>
+            </div>
+        </div>
     </main>
+    <footer>
+        <p>&copy; 2023 YourWebsite.com</p>
+    </footer>
+
+    <div class="teddy-bear"></div>
+    <div class="image-overlay" onclick="hideImage()"></div> <!-- Overlay for full-size image -->
+    <div class="enlarged-image-container" id="enlargedContainer">
+        <img class="enlarged-image" id="enlargedImg" src="" alt="Enlarged Image">
+    </div>
     <script src="js/script.js"></script>
 </body>
 </html>
