@@ -1,4 +1,4 @@
-// Get the target date and time (January 2nd, 2023, 7:54:06 PM)
+// Get the target date (January 2nd, 2023, at 7:54:06 PM)
 const targetDate = new Date('2023-01-02T19:54:06').getTime();
 
 // Update the time elapsed every second
@@ -7,20 +7,21 @@ const timeElapsedInterval = setInterval(function() {
     const timeElapsed = now - targetDate;
 
     // Calculate time units
-    const millisecondsInSecond = 1000;
-    const millisecondsInMinute = millisecondsInSecond * 60;
-    const millisecondsInHour = millisecondsInMinute * 60;
-    const millisecondsInDay = millisecondsInHour * 24;
-    const millisecondsInMonth = millisecondsInDay * 30.44; // Approximation based on an average month
-
-    const months = Math.floor(timeElapsed / millisecondsInMonth);
-    const remainingTime = timeElapsed % millisecondsInMonth;
-    const days = Math.floor(remainingTime / millisecondsInDay);
-    const hours = Math.floor((remainingTime % millisecondsInDay) / millisecondsInHour);
-    const minutes = Math.floor((remainingTime % millisecondsInHour) / millisecondsInMinute);
-    const seconds = Math.floor((remainingTime % millisecondsInMinute) / millisecondsInSecond);
+    const months = Math.floor(timeElapsed / (30.44 * 24 * 60 * 60 * 1000)); // Approximation based on an average month
+    const remainingTime = timeElapsed % (30.44 * 24 * 60 * 60 * 1000);
+    const days = Math.floor(remainingTime / (24 * 60 * 60 * 1000));
+    const remainingTimeInDays = remainingTime % (24 * 60 * 60 * 1000);
+    const hours = Math.floor(remainingTimeInDays / (60 * 60 * 1000));
+    const remainingTimeInHours = remainingTimeInDays % (60 * 60 * 1000);
+    const minutes = Math.floor(remainingTimeInHours / (60 * 1000));
+    const seconds = Math.floor((remainingTimeInHours % (60 * 1000)) / 1000);
 
     // Display the time elapsed on the webpage
     const timeElapsedElement = document.getElementById('time-lapsed');
-    timeElapsedElement.innerHTML = `${months} months, ${days} days, ${hours}h ${minutes}m ${seconds}s`;
+    timeElapsedElement.innerHTML = `${months} months, ${days} days, ${padZero(hours)}:${padZero(minutes)}:${padZero(seconds)}`;
 }, 1000);
+
+// Function to pad single-digit numbers with a leading zero
+function padZero(num) {
+    return num.toString().padStart(2, '0');
+}
