@@ -3,35 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Time Lapsed from January 2nd, 2023 7:54:06 PM</title>
-    <link rel="stylesheet" href="css/styles.css">
+    <title>Baby Photo Album</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
-        <h1>Your Website Header</h1>
+        <h1>Baby Photo Album</h1>
     </header>
-    <nav>
-        <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Contact</a></li>
-        </ul>
-    </nav>
     <main>
-        <section>
-            <h2>Welcome to Your Website</h2>
-            <p>This is the main content area of your website.</p>
+        <section class="baby-photos">
+            <h2>Baby Photo List</h2>
+            <ul id="photo-list"></ul>
         </section>
-
-        <section class="time-lapsed">
-            <h3>Time Lapsed from January 2nd, 2023 7:54:06 PM</h3>
-            <div id="time-elapsed"></div>
+        <section class="event-details">
+            <h2>Event Details</h2>
+            <div>
+                <label for="eventName">Event Name:</label>
+                <input type="text" id="eventName">
+            </div>
+            <div>
+                <label for="eventDate">Event Date:</label>
+                <input type="date" id="eventDate">
+            </div>
+            <button onclick="captureEvent()">Capture Event</button>
         </section>
     </main>
-    <footer>
-        <p>&copy; 2023 YourWebsite.com</p>
-    </footer>
 
-    <script src="js/script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
