@@ -87,7 +87,7 @@ main {
     transform: translate(-50%, -50%) scale(0); /* Start with zero scale (hidden) */
     width: 150px;
     height: 150px;
-    background-image: url('img/teddy.png'); /* Replace with the teddy bear image */
+    background-image: url('img/teddy.jpg'); /* Replace with the teddy bear image */
     background-size: contain;
     background-repeat: no-repeat;
 }
