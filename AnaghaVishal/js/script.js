@@ -1,8 +1,8 @@
 // Sample baby photo list (you can replace these URLs with actual photo URLs)
 const babyPhotos = [
-    'https://via.placeholder.com/150',
-    'https://via.placeholder.com/150',
-    'https://via.placeholder.com/150',
+    '../img/1.jpg',
+    '../img/2.jpg',
+    '../img/3.JPG',
 ];
 
 // Populate the photo list with baby photos
