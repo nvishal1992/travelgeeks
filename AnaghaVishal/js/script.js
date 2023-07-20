@@ -1,26 +1,23 @@
-// Get the start date (replace with your desired start date and time)
-const startDate = new Date('2023-01-01T00:00:00').getTime();
+// Get the current date and time
+const currentDate = new Date();
 
-// Update the time lapsed every second
-const timeLapsedInterval = setInterval(function() {
-    const now = new Date().getTime();
-    const timeLapsed = now - startDate;
+// Get January 1st of the current year
+const january1st = new Date(currentDate.getFullYear(), 0, 1);
 
-    // Calculate time units
-    const days = Math.floor(timeLapsed / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((timeLapsed % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const minutes = Math.floor((timeLapsed % (1000 * 60 * 60)) / (1000 * 60));
-    const seconds = Math.floor((timeLapsed % (1000 * 60)) / 1000);
+// Calculate the time elapsed in milliseconds
+const timeElapsed = currentDate.getTime() - january1st.getTime();
 
-    // Format the output as "DD-MM-YYYY HH:MM:SS"
-    const formattedTime = `${padZero(days)}-${padZero(months)}-${padZero(years)} ${padZero(hours)}:${padZero(minutes)}:${padZero(seconds)}`;
+// Convert milliseconds to days, hours, minutes, and seconds
+const millisecondsInSecond = 1000;
+const millisecondsInMinute = millisecondsInSecond * 60;
+const millisecondsInHour = millisecondsInMinute * 60;
+const millisecondsInDay = millisecondsInHour * 24;
 
-    // Display the time lapsed on the webpage
-    const timeLapsedElement = document.getElementById('time-lapsed');
-    timeLapsedElement.innerHTML = formattedTime;
-}, 1000);
+const days = Math.floor(timeElapsed / millisecondsInDay);
+const hours = Math.floor((timeElapsed % millisecondsInDay) / millisecondsInHour);
+const minutes = Math.floor((timeElapsed % millisecondsInHour) / millisecondsInMinute);
+const seconds = Math.floor((timeElapsed % millisecondsInMinute) / millisecondsInSecond);
 
-// Function to pad single-digit numbers with a leading zero
-function padZero(num) {
-    return num.toString().padStart(2, '0');
-}
+// Display the time elapsed on the webpage
+const timeElapsedElement = document.getElementById('time-elapsed');
+timeElapsedElement.innerHTML = `Time elapsed: ${days} days, ${hours} hours, ${minutes} minutes, ${seconds} seconds.`;
