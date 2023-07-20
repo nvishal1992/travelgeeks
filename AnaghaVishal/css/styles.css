@@ -4,6 +4,9 @@
 .time-lapsed {
     text-align: center;
     margin: 20px;
+    background-color: blue;
+    color: white;
+    padding: 10px;
 }
 
 .time-lapsed h3 {
@@ -11,6 +14,6 @@
     margin-bottom: 10px;
 }
 
-#time-lapsed {
+#time-elapsed {
     font-size: 36px;
 }
