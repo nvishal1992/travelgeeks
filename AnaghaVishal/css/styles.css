@@ -6,39 +6,32 @@ body {
 
 header {
     background-color: #333;
-    color: #fff;
+    color: white;
     text-align: center;
     padding: 20px;
 }
 
 main {
-    max-width: 800px;
-    margin: 20px auto;
     padding: 20px;
-    border: 1px solid #ddd;
 }
 
-h2 {
-    margin-bottom: 10px;
+.photo-gallery {
+    text-align: center;
 }
 
-ul {
-    list-style: none;
-    padding: 0;
+.photo-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 20px;
+    margin-top: 20px;
 }
 
-li {
-    margin-bottom: 10px;
+.photo-item img {
+    max-width: 100%;
+    height: auto;
 }
 
-.event-details div {
-    margin-bottom: 10px;
-}
-
-button {
-    background-color: #333;
-    color: #fff;
-    padding: 8px 16px;
-    border: none;
-    cursor: pointer;
+.photo-item .event-details {
+    font-size: 18px;
+    margin-top: 10px;
 }
