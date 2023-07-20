@@ -1,33 +1,40 @@
-// Sample baby photo list (you can replace these URLs with actual photo URLs)
-const babyPhotos = [
-    '../img/1.jpg',
-    '../img/2.jpg',
-    '../img/3.JPG',
-];
+document.addEventListener("DOMContentLoaded", function() {
+    const photoList = document.querySelector(".photo-list");
 
-// Populate the photo list with baby photos
-const photoListElement = document.getElementById('photo-list');
-babyPhotos.forEach(photoUrl => {
-    const listItem = document.createElement('li');
-    const photo = document.createElement('img');
-    photo.src = photoUrl;
-    listItem.appendChild(photo);
-    photoListElement.appendChild(listItem);
+    // Replace the following array with your actual event details
+    const events = [
+        {
+            imgSrc: "img/1.jpg",
+            eventName: "Event 1",
+            eventDate: "Date 1",
+            eventLocation: "Location 1"
+        },
+        {
+            imgSrc: "img/2.jpg",
+            eventName: "Event 2",
+            eventDate: "Date 2",
+            eventLocation: "Location 2"
+        },
+        // Add more event objects as needed
+    ];
+
+    events.forEach(event => {
+        const photoItem = document.createElement("div");
+        photoItem.classList.add("photo-item");
+
+        const imgElement = document.createElement("img");
+        imgElement.src = event.imgSrc;
+        photoItem.appendChild(imgElement);
+
+        const eventDetails = document.createElement("div");
+        eventDetails.classList.add("event-details");
+        eventDetails.innerHTML = `
+            <p><strong>${event.eventName}</strong></p>
+            <p>Date: ${event.eventDate}</p>
+            <p>Location: ${event.eventLocation}</p>
+        `;
+
+        photoItem.appendChild(eventDetails);
+        photoList.appendChild(photoItem);
+    });
 });
-
-// Function to capture the event details for a photo
-function captureEvent() {
-    const eventNameInput = document.getElementById('eventName');
-    const eventDateInput = document.getElementById('eventDate');
-    const selectedPhoto = document.querySelector('.selected');
-
-    if (selectedPhoto && eventNameInput.value && eventDateInput.value) {
-        const eventDetails = document.createElement('div');
-        eventDetails.innerHTML = `<strong>${eventNameInput.value}</strong>: ${eventDateInput.value}`;
-        selectedPhoto.appendChild(eventDetails);
-
-        // Clear the input fields after capturing the event
-        eventNameInput.value = '';
-        eventDateInput.value = '';
-    }
-}
