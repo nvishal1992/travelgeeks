@@ -1,40 +1,52 @@
+// Wait for the document to fully load
 document.addEventListener("DOMContentLoaded", function() {
-    const photoList = document.querySelector(".photo-list");
+    // Show the teddy bear animation after a slight delay (to allow time for the CSS to load)
+    const teddyBear = document.querySelector(".teddy-bear");
+    setTimeout(function() {
+        teddyBear.style.display = "block";
+        teddyBear.style.animation = "teddy-bear-animation 5s linear 1"; // Apply the CSS animation
+    }, 100);
 
-    // Replace the following array with your actual event details
-    const events = [
-        {
-            imgSrc: "img/1.jpg",
-            eventName: "Event 1",
-            eventDate: "Date 1",
-            eventLocation: "Location 1"
-        },
-        {
-            imgSrc: "img/2.jpg",
-            eventName: "Event 2",
-            eventDate: "Date 2",
-            eventLocation: "Location 2"
-        },
-        // Add more event objects as needed
-    ];
+    // Hide the teddy bear after 10 seconds
+    setTimeout(function() {
+        teddyBear.style.display = "none";
+    }, 11000); // 11000 milliseconds = 11 seconds (animation duration + 1 second buffer)
 
-    events.forEach(event => {
-        const photoItem = document.createElement("div");
-        photoItem.classList.add("photo-item");
-
-        const imgElement = document.createElement("img");
-        imgElement.src = event.imgSrc;
-        photoItem.appendChild(imgElement);
-
-        const eventDetails = document.createElement("div");
-        eventDetails.classList.add("event-details");
-        eventDetails.innerHTML = `
-            <p><strong>${event.eventName}</strong></p>
-            <p>Date: ${event.eventDate}</p>
-            <p>Location: ${event.eventLocation}</p>
-        `;
-
-        photoItem.appendChild(eventDetails);
-        photoList.appendChild(photoItem);
-    });
+    // Your previous JavaScript code here to dynamically load images and event details
 });
+
+
+function showImage(src) {
+    // Show the enlarged image container
+    const enlargedContainer = document.getElementById('enlargedContainer');
+    enlargedContainer.style.display = 'block';
+
+    // Set the image source of the enlarged image
+    const enlargedImg = document.getElementById('enlargedImg');
+    enlargedImg.src = src;
+
+    // Show the image overlay
+    const imageOverlay = document.querySelector('.image-overlay');
+    imageOverlay.style.display = 'block';
+
+    // Add a class to trigger the animation
+    enlargedContainer.classList.add('enlarged-animation');
+
+    // Hide the enlarged image after 5 seconds
+    setTimeout(() => {
+        hideImage();
+    }, 5000);
+}
+
+function hideImage() {
+    // Hide the enlarged image container
+    const enlargedContainer = document.getElementById('enlargedContainer');
+    enlargedContainer.style.display = 'none';
+
+    // Hide the image overlay
+    const imageOverlay = document.querySelector('.image-overlay');
+    imageOverlay.style.display = 'none';
+
+    // Remove the class to reset the animation
+    enlargedContainer.classList.remove('enlarged-animation');
+}
