@@ -1,23 +1,18 @@
-// Get the current date and time
-const currentDate = new Date();
+// Get January 2nd at 7:00 PM of the current year
+const targetDate = new Date(new Date().getFullYear(), 0, 2, 19, 0, 0).getTime();
 
-// Get January 1st of the current year
-const january1st = new Date(currentDate.getFullYear(), 0, 1);
+// Update the time elapsed every second
+const timeElapsedInterval = setInterval(function() {
+    const now = new Date().getTime();
+    const timeElapsed = now - targetDate;
 
-// Calculate the time elapsed in milliseconds
-const timeElapsed = currentDate.getTime() - january1st.getTime();
+    // Calculate time units
+    const days = Math.floor(timeElapsed / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((timeElapsed % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((timeElapsed % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((timeElapsed % (1000 * 60)) / 1000);
 
-// Convert milliseconds to days, hours, minutes, and seconds
-const millisecondsInSecond = 1000;
-const millisecondsInMinute = millisecondsInSecond * 60;
-const millisecondsInHour = millisecondsInMinute * 60;
-const millisecondsInDay = millisecondsInHour * 24;
-
-const days = Math.floor(timeElapsed / millisecondsInDay);
-const hours = Math.floor((timeElapsed % millisecondsInDay) / millisecondsInHour);
-const minutes = Math.floor((timeElapsed % millisecondsInHour) / millisecondsInMinute);
-const seconds = Math.floor((timeElapsed % millisecondsInMinute) / millisecondsInSecond);
-
-// Display the time elapsed on the webpage
-const timeElapsedElement = document.getElementById('time-elapsed');
-timeElapsedElement.innerHTML = `Time elapsed: ${days} days, ${hours} hours, ${minutes} minutes, ${seconds} seconds.`;
+    // Display the time elapsed on the webpage
+    const timeElapsedElement = document.getElementById('time-elapsed');
+    timeElapsedElement.innerHTML = `${days} days, ${hours} hours, ${minutes} minutes, ${seconds} seconds.`;
+}, 1000);
