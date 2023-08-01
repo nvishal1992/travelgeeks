@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Book Cover</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    <div class="book-container" onclick="turnPage()">
+        <div class="book-pages" id="bookPages">
+            <!-- Pages will be dynamically added here -->
+        </div>
+        <div class="book-cover">
+            <h1>My Book Title</h1>
+            <p>Author: John Doe</p>
+        </div>
+    </div>
+    <script>
+        const imageUrls = <?php include('get_images.php'); ?>;
+        const bookPages = document.getElementById("bookPages");
+        let currentPage = 0;
+
+        function addPage(imageSrc) {
+            const pageDiv = document.createElement("div");
+            pageDiv.classList.add("page-overlay");
+
+            const pageImg = document.createElement("img");
+            pageImg.src = imageSrc;
+            pageImg.classList.add("page-image");
+
+            pageDiv.appendChild(pageImg);
+            bookPages.appendChild(pageDiv);
+        }
+
+        imageUrls.forEach((imageUrl) => {
+            addPage(imageUrl);
+        });
+
+        // Rest of the JavaScript code (turnPage() function, etc.)
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>
