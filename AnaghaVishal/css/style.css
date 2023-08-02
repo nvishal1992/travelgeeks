@@ -1,0 +1,342 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
+
+section {
+  padding: 100px 0;
+}
+
+html, body {
+  overflow-x: hidden;
+}
+
+body {
+  font-family: 'Roboto';
+  font-size: 17px;
+  font-weight: 400;
+  background-color: #eee;
+}
+
+header {
+  background: linear-gradient(45deg, #3F51B5, #FF4081);
+  color: #FFFFFF;
+  padding: 50px 0;
+  text-align: center;
+  /* ... your existing styles ... */
+  height: 100vh; /* Set header height to 100% of viewport height */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+header .title {
+  font-family: 'Open Sans', cursive;
+  font-size: 60px;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+position: relative;
+}
+header .title::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 2px;
+  background-color: #FFFFFF; /* Set the color of the decorative line */
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+header .title:hover::after {
+  opacity: 1;
+}
+
+header .subtitle {
+  font-family: 'Allura', sans-serif; /* Replace with your desired font */
+  font-size: 40px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  color: #F7F7F7; /* Lighter color for subtitle text */
+  margin-top: -15px;
+}
+
+header .cta-button {
+  display: inline-block;
+  background-color: #FFFFFF;
+  color: #3F51B5;
+  font-size: 18px;
+  font-weight: 500;
+  padding: 12px 30px;
+  margin-top: 20px;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+header .cta-button:hover {
+  background-color: #3F51B5;
+  color: #FFFFFF;
+}
+
+h2 {
+font-family: 'Open Sans';
+font-size: 30px;
+}
+
+.timeline {
+  position: relative;
+}
+
+.timeline::before {
+  content: '';
+  background: #C5CAE9;
+  width: 5px;
+  height: 95%;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.timeline-item {
+  width: 100%;
+  margin-bottom: 70px;
+}
+
+.timeline-item:nth-child(even) .timeline-content {
+  float: right;
+  padding: 40px 30px 10px 30px;
+}
+
+.timeline-item:nth-child(even) .timeline-content .date {
+  right: auto;
+  left: 0;
+}
+
+.timeline-item:nth-child(even) .timeline-content::after {
+  content: '';
+  position: absolute;
+  border-style: solid;
+  width: 0;
+  height: 0;
+  top: 30px;
+  left: -15px;
+  border-width: 10px 15px 10px 0;
+  border-color: transparent #f5f5f5 transparent transparent;
+}
+
+.timeline-item::after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+.timeline-content {
+  position: relative;
+  width: 45%;
+  padding: 10px 30px;
+  border-radius: 4px;
+  background: #f5f5f5;
+  box-shadow: 0 20px 25px -15px rgba(0, 0, 0, 0.3);
+}
+
+.timeline-content::after {
+  content: '';
+  position: absolute;
+  border-style: solid;
+  width: 0;
+  height: 0;
+  top: 30px;
+  right: -15px;
+  border-width: 10px 0 10px 15px;
+  border-color: transparent transparent transparent #f5f5f5;
+}
+
+.timeline-img {
+  width: 70px;
+  height: 70px;
+  background: #3F51B5;
+  border-radius: 50%;
+  position: absolute;
+  left: 50%;
+  margin-top: 25px;
+  margin-left: -35px;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+
+}
+
+a {
+  background: #3F51B5;
+  color: #FFFFFF;
+  padding: 8px 20px;
+  text-transform: uppercase;
+  font-size: 14px;
+  margin-bottom: 20px;
+  margin-top: 10px;
+  display: inline-block;
+  border-radius: 2px;
+  box-shadow: 0 1px 3px -1px rgba(0, 0, 0, 0.6);
+}
+
+a:hover,
+a:active,
+a:focus {
+  background: #32408f;
+  color: #FFFFFF;
+  text-decoration: none;
+}
+
+.timeline-card {
+  padding: 0 !important;
+}
+
+.timeline-card p {
+  padding: 10px 20px;
+}
+
+.timeline-card a {
+  margin-left: 20px;
+}
+
+.timeline-item:nth-child(2) .timeline-img-header {
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.4)), url("https://hd.unsplash.com/photo-1458530970867-aaa3700e966d") center center no-repeat;
+  background-size: cover;
+}
+
+.timeline-item:nth-child(5) .timeline-img-header {
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.4)), url("https://hd.unsplash.com/photo-1444093826349-9ce8c622f4f3") center center no-repeat;
+  background-size: cover;
+}
+
+.timeline-item:nth-child(6) .timeline-img-header {
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.4)), url("https://hd.unsplash.com/photo-1471479917193-f00955256257") center center no-repeat;
+  background-size: cover;
+}
+
+.timeline-item:nth-child(8) .timeline-img-header {
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.4)), url("https://hd.unsplash.com/photo-1466840787022-48e0ec048c8a") center center no-repeat;
+  background-size: cover;
+}
+
+.timeline-item:nth-child(10) .timeline-img-header {
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.4)), url("https://hd.unsplash.com/photo-1447639703758-f525f36456bf") center center no-repeat;
+  background-size: cover;
+}
+
+.timeline-item:nth-child(11) .timeline-img-header {
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.4)), url("https://hd.unsplash.com/photo-1469429978400-082eec725ad5") center center no-repeat;
+  background-size: cover;
+}
+
+.timeline-img-header {
+  height: 200px;
+  position: relative;
+  margin-bottom: 20px;
+}
+
+
+.timeline-content img{
+  max-width: 100%; /* Ensure the image width fits within the .timeline-img-header */
+  max-height: 100%; /* Ensure the image height fits within the .timeline-img-header */
+  object-fit: contain; /* This will maintain the image's aspect ratio and fit it within the container */
+}
+
+blockquote {
+  margin-top: 30px;
+  color: #757575;
+  border-left-color: #3F51B5;
+  padding: 0 20px;
+}
+
+.date {
+  background: #FF4081;
+  display: inline-block;
+  color: #FFFFFF;
+  padding: 10px;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+@media screen and (max-width: 768px) {
+  .timeline::before {
+    left: 50px;
+  }
+  .timeline .timeline-img {
+    left: 50px;
+  }
+  .timeline .timeline-content {
+    max-width: 100%;
+    width: auto;
+    margin-left: 70px;
+  }
+  .timeline .timeline-item:nth-child(even) .timeline-content {
+    float: none;
+  }
+  .timeline .timeline-item:nth-child(odd) .timeline-content::after {
+    content: '';
+    position: absolute;
+    border-style: solid;
+    width: 0;
+    height: 0;
+    top: 30px;
+    left: -15px;
+    border-width: 10px 15px 10px 0;
+    border-color: transparent #f5f5f5 transparent transparent;
+  }
+}
+
+
+
+
+.timeline-img {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  position: absolute;
+  left: 50%;
+  margin-top: 25px;
+  margin-left: -35px;
+  overflow: hidden;
+  background-image: url(""); /* Remove the previous background image URL */
+  background-color: #3F51B5; /* Add a background color as a fallback in case the icon fails to load */
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+  color: white; /* Set the color of the heart icon to white */
+
+}
+.timeline-img::before {
+font-family: "Font Awesome 5 Free";
+ font-weight: 800;
+content: "\f135";  /* Font Awesome heart icon code */
+}
+
+/* ... Your existing styles ... */
+
+/* ... Your existing styles ... */
+
+/* Keyframes for the dancing animation */
+@keyframes dancingAnimation {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0); }
+}
+
+/* Apply the animation to the teddy bear image */
+.dancing-bear {
+  animation-name: dancingAnimation;
+  animation-duration: 2s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+
+  /* Adjust the dimensions of the bear */
+  width: 100px; /* Change the width as needed */
+  height: auto; /* Maintain the aspect ratio of the image */
+}
+
