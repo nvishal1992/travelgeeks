@@ -147,7 +147,7 @@ html, body {
   position: absolute;
   top: 12px;
   left: 12px;
-  background: white;
+  background: #ff6f91;
   color: white;
   border: none;
   border-radius: 50%;
@@ -263,9 +263,16 @@ html, body {
     height: 100px;
   }
   .flipbook {
-    width: 100vw;
-    height: 50vh;
-    border-radius: 10px;
+    width: 100vw !important;
+    height: 100vh !important;
+    max-width: 100vw !important;
+    max-height: 100vh !important;
+    border-radius: 0 !important;
+  }
+  #diary-section {
+    width: 100vw !important;
+    height: 100vh !important;
+    padding: 10px 5px;
   }
   .page img {
     width: 90%;
@@ -315,5 +322,3 @@ html, body {
     font-size: 13px;
   }
 }
-
-
