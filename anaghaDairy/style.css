@@ -147,7 +147,7 @@ html, body {
   position: absolute;
   top: 12px;
   left: 12px;
-  background: #ff6f91;
+  background: white;
   color: white;
   border: none;
   border-radius: 50%;
@@ -315,4 +315,5 @@ html, body {
     font-size: 13px;
   }
 }
+
 
