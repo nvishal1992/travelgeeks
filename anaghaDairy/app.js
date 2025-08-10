@@ -71,10 +71,33 @@ $(document).ready(function () {
   // Back covers
   $flipbook.append(`<div class="hard">Stay Tuned for more update!!! <small></small></div>`);
 
-  // Initialize turn.js
+// Determine flipbook size dynamically for better mobile compatibility
+  const maxWidth = 800;
+  const maxHeight = 600;
+  const margin = 40; // some padding to viewport edges
+  let width = window.innerWidth - margin;
+  let height = window.innerHeight - margin;
+
+  // Maintain aspect ratio close to original 800x600 (4:3)
+  if (width / height > 4 / 3) {
+    width = (height * 4) / 3;
+  } else {
+    height = (width * 3) / 4;
+  }
+
+  // Don't exceed max dimensions
+  width = Math.min(width, maxWidth);
+  height = Math.min(height, maxHeight);
+
+  // Initialize turn.js with dynamic width/height
   $flipbook.turn({
-    width: 800,
-    height: 600,
+    width: width,
+    height: height,
     autoCenter: true,
+    duration: 1500, // slower flip for softer feel
+    elevation: 50,  // higher curve like real paper
+    gradients: true // smooth paper shading
   });
 });
+
+
