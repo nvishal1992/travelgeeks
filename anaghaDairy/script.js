@@ -1,317 +1,43 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+// Floating hearts on welcome screen
+const welcome = document.getElementById('welcome');
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
-}
+function createHeart() {
+  // Limit hearts creation on very small screens for performance
+  if (window.innerWidth < 400 && document.querySelectorAll('.heart').length > 15) {
+    return; // avoid overcrowding and lag on tiny screens
+  }
 
-html, body {
-  height: 100%;
-  width: 100%;
-  background: #fdf6f0;
-  overflow-x: hidden;
-}
-
-/* Section 1: Welcome */
-#welcome {
-  position: relative;
-  height: 100vh;
-  width: 100vw;
-  background: radial-gradient(circle at center, #ffe9f0, #ffccd5);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  overflow: hidden;
-  padding: 20px 1rem;
-  transition: opacity 0.8s ease;
-}
-#welcome h1 {
-  font-size: clamp(2rem, 6vw, 3rem);
-  color: #5a3e36;
-  margin-bottom: 1rem;
-}
-#welcome p {
-  font-size: clamp(1rem, 3vw, 1.3rem);
-  color: #6f4e47;
-  max-width: 480px;
-}
-#openDiary {
-  margin-top: 1.5rem;
-  padding: 12px 36px;
-  background: #ff6f91;
-  color: white;
-  font-weight: 600;
-  font-size: clamp(1.1rem, 3vw, 1.3rem);
-  border-radius: 28px;
-  border: none;
-  cursor: pointer;
-  box-shadow: 0 8px 20px rgba(255, 111, 145, 0.6);
-  transition: background-color 0.4s ease, box-shadow 0.4s ease;
-  user-select: none;
-  outline-offset: 2px;
-}
-#openDiary:hover,
-#openDiary:focus {
-  background: #e84e75;
-  box-shadow: 0 10px 30px rgba(232, 78, 117, 0.8);
-  outline: none;
-}
-.kitty-container {
-  margin-top: 2rem;
-  width: 150px;
-  height: 150px;
-  animation: kittyBounce 3s ease-in-out infinite;
-  user-select: none;
-  pointer-events: none;
-}
-.kitty-container img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-}
-@keyframes kittyBounce {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-8px); }
+  const heart = document.createElement('div');
+  heart.className = 'heart';
+  heart.style.left = `${Math.random() * 100}%`;
+  heart.style.bottom = '-20px'; // start just below bottom
+  heart.style.animationDuration = `${(Math.random() * 3 + 3).toFixed(2)}s`;
+  heart.style.background = `hsl(${Math.random() * 30 + 340}, 85%, 75%)`;
+  welcome.appendChild(heart);
+  setTimeout(() => heart.remove(), 6000);
 }
 
-/* Floating Hearts */
-.heart {
-  position: absolute;
-  width: 20px;
-  height: 20px;
-  background: linear-gradient(135deg, #f7a1b3, #ff92a0);
-  transform: rotate(45deg);
-  animation: floatUp linear infinite;
-  pointer-events: none;
-  opacity: 0.8;
-  bottom: 0;
-  will-change: transform, opacity;
-  user-select: none;
-}
-.heart::before,
-.heart::after {
-  content: '';
-  position: absolute;
-  width: 20px;
-  height: 20px;
-  background: linear-gradient(135deg, #f7a1b3, #ff92a0);
-  border-radius: 50%;
-}
-.heart::before {
-  top: -10px;
-  left: 0;
-}
-.heart::after {
-  left: -10px;
-  top: 0;
-}
-@keyframes floatUp {
-  0% {
-    transform: translateY(0) rotate(45deg);
-    opacity: 1;
-  }
-  100% {
-    transform: translateY(-800px) rotate(45deg);
-    opacity: 0;
-  }
-}
+// Adjust interval for smaller devices to reduce CPU load
+const heartInterval = window.innerWidth < 400 ? 700 : 400;
+setInterval(createHeart, heartInterval);
 
-/* Section 2: Diary Section */
-#diary-section {
-  display: none;  /* hidden initially */
-  position: relative;
-  top: 0; left: 0;
-  height: 100vh;
-  width: 100vw;
-  background: linear-gradient(135deg, #ffe7f0, #e6d6f0);
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  padding: 20px;
-  box-sizing: border-box;
-  transition: opacity 0.8s ease;
-}
+// Show diary section and hide welcome on button click
+const openBtn = document.getElementById('openDiary');
+const diarySection = document.getElementById('diary-section');
+const welcomeSection = document.getElementById('welcome');
+const backBtn = document.getElementById('backBtn');
 
-/* Show diary when active */
-#diary-section.active {
-  display: flex;
-  opacity: 1;
-}
+// Open diary - show section 2, hide section 1
+openBtn.addEventListener('click', () => {
+  diarySection.classList.add('active');
+  diarySection.setAttribute('aria-hidden', 'false');
+  welcomeSection.style.display = 'none';
+});
 
-/* Crazy Back Button */
-.crazy-back-btn {
-  position: absolute;
-  top: 12px;
-  left: 12px;
-  background: #ff6f91;
-  color: white;
-  border: none;
-  border-radius: 50%;
-  width: 38px;
-  height: 38px;
-  font-size: 18px;
-  cursor: pointer;
-  box-shadow: 0 6px 16px rgba(255, 111, 145, 0.8);
-  user-select: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  filter: drop-shadow(0 3px 8px rgba(232, 78, 117, 0.7));
-  transition: transform 0.2s ease, box-shadow 0.3s ease, background-color 0.3s ease;
-}
-.crazy-back-btn:hover,
-.crazy-back-btn:focus {
-  background: #e84e75;
-  box-shadow: 0 10px 30px rgba(232, 78, 117, 0.9);
-  transform: rotate(15deg) scale(1.1);
-  outline: none;
-}
+// Back button - show section 1, hide section 2
+backBtn.addEventListener('click', () => {
+  diarySection.classList.remove('active');
+  diarySection.setAttribute('aria-hidden', 'true');
+  welcomeSection.style.display = 'flex';
+});
 
-/* Flipbook styles */
-.flipbook {
-  width: 1000px;
-  height: 600px;
-  border-radius: 20px;
-  overflow: hidden;
-}
-
-/* Add other flipbook-specific styles as needed */
-.flipbook .hard {
-  background: #c0392b !important;
-  color: #fff;
-  font-weight: bold;
-  border: none; 
-}
-
-.flipbook .hard small {
-  font-style: italic;
-  font-weight: lighter;
-  opacity: 0.7;
-  font-size: 14px;
-}
-
-.flipbook .page {
-  background: white;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-  border: 1px solid rgba(0, 0, 0, 0.11);
-}
-
-.page img {
-  width: 70%;
-  object-fit: cover;
-  margin: auto;
-}
-
-.date {
-  font-weight: 600;
-  font-size: 20px;
-  color: #007bff;
-  margin-bottom: 12px;
-  letter-spacing: 1px;
-  font-variant: small-caps;
-  border-bottom: 2px solid #007bff;
-  padding-bottom: 4px;
-}
-
-.event {
-  font-size: 18px;
-  line-height: 1.6;
-  color: #333;
-  padding-left: 15px;
-  font-style: italic;
-  border-left: 4px solid #007bff;
-  box-shadow: inset 2px 0 6px rgba(0, 123, 255, 0.15);
-  margin-top: 8px;
-  background-color: #f9fbfd;
-  border-radius: 4px;
-  padding: 12px 15px;
-}
-
-/* Responsive Enhancements */
-
-/* Medium devices/tablets */
-@media (max-width: 1100px) {
-  .flipbook {
-    width: 90vw;
-    height: 55vh;
-  }
-}
-
-/* Small devices/mobile */
-@media (max-width: 700px) {
-  #openDiary {
-    padding: 10px 24px;
-    font-size: 1rem;
-  }
-  #welcome h1 {
-    font-size: 1.8rem;
-  }
-  #welcome p {
-    font-size: 1rem;
-    max-width: 280px;
-  }
-  .kitty-container {
-    width: 100px;
-    height: 100px;
-  }
-  .flipbook {
-    width: 100vw;
-    height: 50vh;
-    border-radius: 10px;
-  }
-  .page img {
-    width: 90%;
-  }
-  .date {
-    font-size: 16px;
-    margin-bottom: 8px;
-  }
-  .event {
-    font-size: 14px;
-    padding-left: 10px;
-    padding: 10px 12px;
-  }
-  .crazy-back-btn {
-    width: 32px;
-    height: 32px;
-    font-size: 16px;
-    top: 8px;
-    left: 8px;
-  }
-}
-
-/* Extra small devices */
-@media (max-width: 400px) {
-  #welcome h1 {
-    font-size: 1.5rem;
-  }
-  #welcome p {
-    font-size: 0.9rem;
-    max-width: 220px;
-  }
-  #openDiary {
-    padding: 8px 20px;
-    font-size: 0.9rem;
-  }
-  .kitty-container {
-    width: 80px;
-    height: 80px;
-  }
-  .flipbook {
-    height: 45vh;
-  }
-  .date {
-    font-size: 14px;
-  }
-  .event {
-    font-size: 13px;
-  }
-}
