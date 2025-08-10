@@ -27,6 +27,7 @@ html, body {
   text-align: center;
   overflow: hidden;
   padding: 20px 1rem;
+  transition: opacity 0.8s ease;
 }
 #welcome h1 {
   font-size: clamp(2rem, 6vw, 3rem);
@@ -132,11 +133,13 @@ html, body {
   flex-direction: column;
   padding: 20px;
   box-sizing: border-box;
+  transition: opacity 0.8s ease;
 }
 
 /* Show diary when active */
 #diary-section.active {
   display: flex;
+  opacity: 1;
 }
 
 /* Crazy Back Button */
@@ -168,7 +171,7 @@ html, body {
   outline: none;
 }
 
-/* Flipbook styles (keep your existing from flipbook CSS) */
+/* Flipbook styles */
 .flipbook {
   width: 1000px;
   height: 600px;
@@ -177,11 +180,8 @@ html, body {
 }
 
 /* Add other flipbook-specific styles as needed */
-
-
-
 .flipbook .hard {
-  background: #c2b4e2 !important;
+  background: #c0392b !important;
   color: #fff;
   font-weight: bold;
   border: none; 
@@ -195,7 +195,7 @@ html, body {
 }
 
 .flipbook .page {
-  background: #FEF0F4;
+  background: white;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -213,11 +213,11 @@ html, body {
 .date {
   font-weight: 600;
   font-size: 20px;
-  color: #4a2574;
+  color: #007bff;
   margin-bottom: 12px;
   letter-spacing: 1px;
   font-variant: small-caps;
-  border-bottom: 2px solid #4a2574;
+  border-bottom: 2px solid #007bff;
   padding-bottom: 4px;
 }
 
@@ -227,7 +227,7 @@ html, body {
   color: #333;
   padding-left: 15px;
   font-style: italic;
-  border-left: 4px solid #4a2574;
+  border-left: 4px solid #007bff;
   box-shadow: inset 2px 0 6px rgba(0, 123, 255, 0.15);
   margin-top: 8px;
   background-color: #f9fbfd;
@@ -235,13 +235,17 @@ html, body {
   padding: 12px 15px;
 }
 
-/* Responsive */
+/* Responsive Enhancements */
+
+/* Medium devices/tablets */
 @media (max-width: 1100px) {
   .flipbook {
     width: 90vw;
     height: 55vh;
   }
 }
+
+/* Small devices/mobile */
 @media (max-width: 700px) {
   #openDiary {
     padding: 10px 24px;
@@ -258,34 +262,57 @@ html, body {
     width: 100px;
     height: 100px;
   }
+  .flipbook {
+    width: 100vw;
+    height: 50vh;
+    border-radius: 10px;
+  }
+  .page img {
+    width: 90%;
+  }
+  .date {
+    font-size: 16px;
+    margin-bottom: 8px;
+  }
+  .event {
+    font-size: 14px;
+    padding-left: 10px;
+    padding: 10px 12px;
+  }
+  .crazy-back-btn {
+    width: 32px;
+    height: 32px;
+    font-size: 16px;
+    top: 8px;
+    left: 8px;
+  }
 }
-.crazy-back-btn {
-  position: absolute;
-  top: 12px;
-  left: 12px;
-  background: #ffffed;
-  color: white;
-  border: none;
-  border-radius: 50%;
-  width: 38px;
-  height: 38px;
-  font-size: 18px;
-  cursor: pointer;
-  box-shadow: 0 6px 16px rgba(255, 111, 145, 0.8);
-  transition: 
-    transform 0.2s ease, 
-    box-shadow 0.3s ease, 
-    background-color 0.3s ease;
-  user-select: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  filter: drop-shadow(0 3px 8px rgba(232, 78, 117, 0.7));
+
+/* Extra small devices */
+@media (max-width: 400px) {
+  #welcome h1 {
+    font-size: 1.5rem;
+  }
+  #welcome p {
+    font-size: 0.9rem;
+    max-width: 220px;
+  }
+  #openDiary {
+    padding: 8px 20px;
+    font-size: 0.9rem;
+  }
+  .kitty-container {
+    width: 80px;
+    height: 80px;
+  }
+  .flipbook {
+    height: 45vh;
+  }
+  .date {
+    font-size: 14px;
+  }
+  .event {
+    font-size: 13px;
+  }
 }
-.crazy-back-btn:hover,
-.crazy-back-btn:focus {
-  background: #e84e75;
-  box-shadow: 0 10px 30px rgba(232, 78, 117, 0.9);
-  transform: rotate(15deg) scale(1.1);
-  outline: none;
-}
+
