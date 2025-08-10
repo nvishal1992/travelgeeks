@@ -249,8 +249,9 @@ html, body {
 
 /* Extra small devices */
 @media (max-width: 400px) {
-  #welcome h1 {
-    font-size: 1.5rem;
+  .page-right {
+    width: 95%;
+    padding: 0 8px;
   }
   #welcome p {
     font-size: 0.9rem;
@@ -269,8 +270,22 @@ html, body {
   }
   .date {
     font-size: 14px;
+    margin-bottom: 4px;
+    white-space: nowrap; /* keep date on one line */
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
+
   .event {
     font-size: 13px;
+    padding-left: 10px;
+    padding-right: 10px;
+    white-space: normal;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    max-height: 120px;
+    overflow-y: auto;
   }
 }
+}
+
