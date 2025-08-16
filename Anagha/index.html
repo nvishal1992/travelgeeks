@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Anagha's dairy</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Section 1: Welcome -->
+ <section id="welcome" aria-label="Welcome screen">
+  <h1>Anagha's Diary!</h1>
+  <p>Open your heart and explore the beautiful memories. Of course with smile &#128540 !!!.</p>
+  <button id="openDiary" aria-label="Open the diary">Take me to dairy</button>
+  <div class="kitty-container" aria-hidden="true" title="Cute welcoming kitty">
+    <img src="img/elephant.gif" alt="Cute welcoming kitty" loading="lazy" width="150" height="150" />
+  </div>
+</section>
+
+  <!-- Section 2: Photo Album -->
+  <section id="diary-section" aria-hidden="true">
+    <button class="crazy-back-btn" id="backBtn">&#8592;</button>
+    <div class="album-grid" id="albumGrid"></div>
+  </section>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox">
+    <button class="lightbox-arrow left" id="prevBtn">&#10094;</button>
+    <img id="lightbox-img" src="" alt="Lightbox Image">
+    <div class="lightbox-caption" id="lightbox-caption"></div>
+    <button class="lightbox-arrow right" id="nextBtn">&#10095;</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
