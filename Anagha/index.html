@@ -3,23 +3,31 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Anagha's dairy</title>
+  <title>Anagha's Diary</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Sacramento&display=swap" rel="stylesheet">
 </head>
 <body>
   <!-- Section 1: Welcome -->
- <section id="welcome" aria-label="Welcome screen">
-  <h1>Anagha's Diary!</h1>
-  <p>Open your heart and explore the beautiful memories. Of course with smile &#128540 !!!.</p>
-  <button id="openDiary" aria-label="Open the diary">Take me to dairy</button>
-  <div class="kitty-container" aria-hidden="true" title="Cute welcoming kitty">
-    <img src="img/elephant.gif" alt="Cute welcoming kitty" loading="lazy" width="150" height="150" />
-  </div>
-</section>
+  <section id="welcome" aria-label="Welcome screen">
+    <h1>Anagha's Diary!</h1>
+    <p>Open your heart and explore beautiful memories. Of course with a smile &#128540;!</p>
+    <button id="openDiary" aria-label="Open the diary">Take me to diary</button>
+    <div class="kitty-container" aria-hidden="true" title="Cute welcoming kitty">
+      <img src="img/elephant.gif" alt="Cute welcoming kitty" loading="lazy" width="150" height="150" />
+    </div>
+  </section>
 
   <!-- Section 2: Photo Album -->
   <section id="diary-section" aria-hidden="true">
-    <button class="crazy-back-btn" id="backBtn">&#8592;</button>
+    <div class="top-bar">
+      <button class="crazy-back-btn" id="backBtn">&#8592;</button>
+      <select id="yearFilter" aria-label="Filter by year">
+        <option value="all">All Years</option>
+      </select>
+    </div>
     <div class="album-grid" id="albumGrid"></div>
   </section>
 
